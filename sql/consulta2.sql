@@ -1,0 +1,7 @@
+select F.ID_PESSOA, 
+  COUNT(DISTINCT(ID_VENDA))
+from f_vendas F
+  JOIN d_tempo T ON F.ID_TEMPO = T.ID_TEMPO
+  WHERE T.NU_MES = '03'
+    AND T.NU_ANO = '2020'
+GROUP BY F.ID_PESSOA
